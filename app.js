@@ -53,6 +53,12 @@ const StorageCtrl = (function() {
       }
 
       localStorage.setItem("items", JSON.stringify(items));
+    },
+
+    clearAllItems: function() {
+      let items = [];
+
+      localStorage.setItem("items", JSON.stringify(items));
     }
   };
 })();
@@ -478,7 +484,7 @@ const App = (function(ItemCtrl, UICtrl, StorageCtrl) {
 
         ItemCtrl.clearAllItems();
 
-        console.log(ItemCtrl.logData());
+        StorageCtrl.clearAllItems();
 
         const totalCalories = ItemCtrl.getTotalCalories();
 
